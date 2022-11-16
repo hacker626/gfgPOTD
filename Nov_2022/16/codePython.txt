@@ -1,0 +1,31 @@
+### https://practice.geeksforgeeks.org/problems/sum-of-beauty-of-all-substrings-1662962118/1
+
+
+#User function Template for python3
+# GFG Link: https://practice.geeksforgeeks.org/problems/sum-of-beauty-of-all-substrings-1662962118/1
+class Solution:
+    def beautySum(self, s):
+        # Code here
+        counter = 0
+        
+        for i in range(len(s)):
+            dict_ = [0 for i in range(26)]
+            # print(dict_)
+            for j in range(i,len(s)):
+                
+                dict_[ord(s[j])-ord('a')]+=1
+                
+                
+                             
+                counter+=self.beautyString(dict_)
+        return counter
+        
+        
+    def beautyString(self,dict_):
+        maxNum = float('-inf')
+        minNum = float('inf')
+        for i in dict_:
+            if(i != 0):
+                maxNum = max(maxNum,i)
+                minNum = min(minNum,i)
+        return maxNum-minNum
