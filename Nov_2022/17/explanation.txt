@@ -1,0 +1,44 @@
+Explanation: [ You can take example to watch the pattern]
+
+Why to return "square root of N"(floor).
+Every number upto N,which is perfect square will remains open at end.
+Thus,for N number of gate,the maximum possible numberof open gate will floor(math.sqrt(N)) whose each square will be open.
+For example, for N = 10, gate number 1,4,9[all are perfect square] will remain open at end.
+Thus, total 3 gate will open at end.
+Now, the question arises why only perfect square will remain at ends.
+
+Note: Only perfect square number have total odd factor.
+
+Thus,closed gate will become open.
+
+ 
+
+Check out pattern:
+
+ 
+
+1: 1[odd]
+
+2: 1,2
+
+3: 1,3
+
+4: 1,2,4[odd]
+
+5: 1,5
+
+6: 1,2,3,6
+
+...
+
+ 
+
+9: 1,3,9[odd]
+
+...
+
+ 
+
+16:1,2,4,8,16[odd]
+
+Thus, we are interested to count all such number which are perfect square.
