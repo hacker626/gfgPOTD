@@ -1,0 +1,10 @@
+Time Taken: 0.15s [Python]
+
+Approach:
+
+1. After reading the question, one can wonder if what is this anagrams.
+2. So, basically two set of letters are called to anagrams if another one created by jumbling the other.
+3. Now,how one can check whether two binary tree are anagrams two each other in traversal.
+4. So,basically coders can go for creating hashmap with key as order level of tree and keeping value as the number given in the tree at each level.
+5. After finding the both hashmap,just iterate over it and sort out the data to comparing the both value of each key.
+6. If all comparison goes well return 1 else return 0
