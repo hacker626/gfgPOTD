@@ -1,0 +1,21 @@
+# Link: https://practice.geeksforgeeks.org/problems/add-binary-strings3805/1
+# 27_NOV_2022
+# Add Binary Strings
+
+
+How to Approach: 
+
+Here,we have to add two binary number concerning about the fact that the result should not have leading zeros.
+Clearly,the binary number can be of different size.
+So,let us first make both string of equal length by placing leading zeros.[As,leading zeros will not affect the sum]
+Now one can recall from Digital Electronics that in Full Adder,
+Sum bits = Xoring of ( A xor B xor Cin)[ Cin: Carry in]
+And, Cout[carry out] = ((A xor B) and Cin) or (A and B)
+Use this logic to make out addition for each bits.
+How to Code:
+
+First make out each Binary number of equal length.
+Iterate the number from last index and generating the Sum bits and inserting in the list.
+On the end of iteration,make sure whether carry at end is still 0 else,append 1 at the end.
+Since answer(result) should not contain leading zeros,pop out all such zeros until 1.
+Finally return string in reverse manner(as,we gonna having our calculation in reverse order).

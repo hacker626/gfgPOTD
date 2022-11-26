@@ -1,0 +1,45 @@
+# Link: https://practice.geeksforgeeks.org/problems/add-binary-strings3805/1
+# 27_NOV_2022
+# Add Binary Strings
+
+class Solution:
+	def addBinary(self, A, B):
+	    res,Cin = [],0
+	    Cin = 0
+	    A,B = list(A),list(B)
+	   # Make the list to be equal length
+	    if(len(A)>len(B)):
+	        for i in range(len(A)-len(B)):
+	            B.insert(0,0)
+	    elif(len(B)>len(A)):
+	        for i in range(len(B)-len(A)):
+	            A.insert(0,0)
+	            
+	    for i in range(-1,-1-len(B),-1):
+	        Ain,Bin = int(A[i]),int(B[i])
+	        Sin = (Ain^Bin^Cin)  # Sum Bits
+	        Cin = (((Ain^Bin) and Cin) or (Ain and Bin)) # Carry Bits
+	        res.append(Sin)
+	        
+	    if(Cin == 1):
+	        res.append(1)
+	    while(res[-1] == 0):
+	        res.pop()   
+        return "".join(str(res[i]) for i in range(len(res)-1,-1,-1))
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+	T=int(input())
+	for i in range(T):
+		a,b = input().split(" ")
+		ob = Solution()
+		answer = ob.addBinary(a,b)
+		
+		print(answer)
+
+
+# } Driver Code Ends
