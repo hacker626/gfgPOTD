@@ -1,0 +1,16 @@
+# Time Complexity: O(N)
+# Space Complexity: O(1)
+# Link: https://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1
+# Title: Rearrange Array Alternately ( 01 Dec 2022)
+# Contributed By: Mridul Bhaskar
+
+How to Approach:
+
+Got this idea/code from one of its comments,but did not find any suitable explanation for this logic implementation.
+Let me explain, Here we have to update the array with O(1) space complexity; updating the alternatively, largest and smallest from left to right.
+So, now suppose we goes updating the elements with index 0,2,4,6, and so on with index -1,-2,-3 ,,, and so on[negative index means approaching from right side]
+But this will loss the identity of original number which will furthur to be used to updated the odd index number.
+Therefore, we can update number like that its floor division gives updated number and remainder gives original number.
+Note: arr[i] += (arr[end]%max_)*max_
+
+Here, the floor division of arr[i] will gives updated number while remainder gives old/original number.

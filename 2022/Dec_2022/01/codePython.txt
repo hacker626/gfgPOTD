@@ -1,0 +1,58 @@
+#User function Template for python3
+# Time Complexity: O(N)
+# Space Complexity: O(1)
+# Link: https://practice.geeksforgeeks.org/problems/-rearrange-array-alternately-1587115620/1
+# Title: Rearrange Array Alternately ( 01 Dec 2022)
+# Contributed By: Mridul Bhaskar
+class Solution:
+    ##Complete this function
+    #Function to rearrange  the array elements alternately.
+    def rearrange(self,arr, n): 
+        ##Your code here
+        
+        start = 0 
+        end = n-1
+        max_ = arr[-1]+1
+        
+        for i in range(0,n,2):
+            arr[i] += (arr[end]%max_)*max_
+            end-=1
+        for j in range(1,n,2):
+            arr[j] += (arr[start]%max_)*max_
+            start+=1
+        for k in range(n):
+            arr[k]//= max_
+        
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+import math
+
+
+
+
+def main():
+        T=int(input())
+        while(T>0):
+            
+            n=int(input())
+            
+            arr=[int(x) for x in input().strip().split()]
+            
+            ob=Solution()
+            ob.rearrange(arr,n)
+            
+            for i in arr:
+                print(i,end=" ")
+            
+            print()
+            
+            T-=1
+
+
+if __name__ == "__main__":
+    main()
+# } Driver Code Ends
