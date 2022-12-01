@@ -1,0 +1,22 @@
+#User function Template for python3
+# Contributed By: Mridul Bhaskar
+#Link: https://practice.geeksforgeeks.org/problems/check-if-it-is-possible-to-convert-one-string-into-another-with-given-constraints4116/1
+# 2 Dec 2022, Check if it is possible to convert one string into another with given constraints
+# Comments: https://discuss.geeksforgeeks.org/comment/eb7a2e430ffa5faae17cbd91a4ea4cf5
+
+
+
+TC: O(M+N) 
+
+SC: O(1)
+
+How to Approach:
+
+Here, we have to find whether the string can be modified as per given condition so it can become replica of the other.
+Clearly, no character can cross each other, this means that the string willl only replicate in the case when, the alphabet are present in both string in same order(with numbers).
+Now create two index one for each to match the presence of alphabet in both string in same order.
+Increase the index only when we found "#" otherwise wait for other one to match the alphabet.
+If alphabet matches then pass on otherwise return 0 immediately.
+At last return 1 if while terminate indicating all alphabet matches.
+Must ensure that to count the length and letters in each to escape index error.
+Note: Here, we have to solve in O(1) space Complexity.

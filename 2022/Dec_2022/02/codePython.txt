@@ -1,0 +1,47 @@
+#User function Template for python3
+# Contributed By: Mridul Bhaskar
+#Link: https://practice.geeksforgeeks.org/problems/check-if-it-is-possible-to-convert-one-string-into-another-with-given-constraints4116/1
+# 2 Dec 2022, Check if it is possible to convert one string into another with given constraints
+# Comments: https://discuss.geeksforgeeks.org/comment/eb7a2e430ffa5faae17cbd91a4ea4cf5
+class Solution:
+    def isItPossible(sef, S, T, M, N):
+        #code here
+        chrCount,chrCount1,i,j = 0,0,0,0
+        for i_ in S:
+            if(i_!="#"):
+                chrCount+=1
+        for j_ in T:
+            if(j_!= "#"):
+                chrCount1+=1
+        if(chrCount!=chrCount1 or M!=N):
+            return 0
+            
+        while(i<M and j<M):
+            
+            if(S[i] == "#" or T[j] == "#"):
+                if(S[i]  == "#"):
+                    i+=1
+                if(T[j] == "#"):
+                    j+=1
+            elif(S[i] != "#" and T[j]!="#"):
+                if(S[i] == T[j]):
+                    i+=1
+                    j+=1
+                else:
+                    return 0
+        
+        return 1 
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+import math
+        
+if __name__=='__main__':
+    t=int(input())
+    for _ in range(t):
+        S,T=input().split()
+        ob=Solution()
+        print(ob.isItPossible(S,T,len(S),len(T)))
+# } Driver Code Ends
