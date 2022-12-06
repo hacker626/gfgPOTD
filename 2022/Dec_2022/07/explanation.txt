@@ -1,0 +1,15 @@
+# Link: https://practice.geeksforgeeks.org/problems/find-k-th-smallest-element-in-bst/1
+# GFG POTD: 07/12/2022_ k-th smallest element in BST
+# Contributed By: Mridul Bhaskar
+# Comments: https://discuss.geeksforgeeks.org/comment/0022aa2d16d3a6c7b603d72637f198f0
+
+
+
+
+How to Approach: 
+
+Here we have to find the Kth smallest Element in the given BST having O(1) extra space.
+Now, clearly we know that inOrder traverse will give out sorted data in BST.
+Thus, made out Inorder traversal while taking a counter to manage for value of k.
+Now,if we reach out that specific Kth element.Store it out and return it.
+Make sure that default value to be returned to be -1 so that we will return -1 in the case when the K is greater than total element being present in BST.
