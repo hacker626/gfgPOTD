@@ -1,0 +1,18 @@
+#User function Template for python3
+# Link: https://practice.geeksforgeeks.org/problems/3-divisors3942/1
+# 08_Dec_2022 3 Divisors
+# Contributed By: Mridul Bhaskar
+# Comments: https://discuss.geeksforgeeks.org/comment/1d67b9b37f83d0a2cf974c901be3c690
+
+
+
+How to Approach:  
+
+How to track the count of the number having 3 divisors.
+Clearly, every number greater than 1 have at least 2 divisors 1 and itself.
+Now for the incorporating the only 3rd divisor such that total 3 divisors will be there.
+This is possible only when the third divisor will be prime.
+Finally track down all such number for each query.
+
+
+
