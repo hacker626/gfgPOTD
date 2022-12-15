@@ -1,0 +1,18 @@
+#User function Template for python3
+# Link: https://practice.geeksforgeeks.org/problems/balanced-string1627/1
+# Comment: https://discuss.geeksforgeeks.org/comment/198fd6c9070df40a07dc05cd48df5546
+# 15 Dec_2022 Balanced String[Easy]
+# Contributed By: Mridul Bhaskar
+
+
+
+
+
+This is a beautiful question dedicated to all toddler in GFG.
+Now, in this question we have to play with string,ASCII code and If-else statement.
+First create an empty list to store all alphabet for N<=26.
+Going through the question, when N is divisible by 2,then store the alphabet from from ASCII value 97 upto N//2 terms and then add on N//2 elements in reverse manner from 122 ASCII values( from 'z').
+Similarly, when N is odd,we have given two conditions whether the sum of digits are odd or even and condition following it from string arrangement.
+The odd part can be solved similarly to Even subpart.
+Just go throughout the question takes your time and solve it.
+Note: You can calculate sum of digits of N by dividing and calculating the remainder using while loop.
