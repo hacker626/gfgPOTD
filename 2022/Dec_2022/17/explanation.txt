@@ -1,0 +1,20 @@
+#TC: O(1),SC:O(1)
+#Link: https://practice.geeksforgeeks.org/problems/break-a-number5913/1
+# Contributed By: Mridul Bhaskar
+# GFG_POTD: 17_DEC_2022 Break a Number
+#Comment_link: https://discuss.geeksforgeeks.org/comment/ad28461cbe4deaf53f693694d7a3a571
+
+How to Approach:
+
+At first when I go through the question which is coined to be easy seems bit difficult,me builting logic on DP[using memoization method]
+But when going through the entire question got that the expected time complexity to be O(1).
+Suddenly on looking through the pattern of the answer as:
+For n = 2,output = 6;  n = 3,output = 10;  n = 4,output = 15.
+Here you can find the pattern that the answer increase in +4,+5,+6,+7 than previous output value of N.
+Now the answer series will looks like: 1,3,6,10,15,21,28,36 and so on.
+Here the difference of two consecutive term is an AP.
+Thus, the Common difference at Nth term will be: n(2*2+(n-1)*1)//2 [where a = 2,d= 1]
+So, Tn = a+c.d. = 1+(n(n+3))//2 [a = 1,first term of answer series]
+
+
+Note: Please have a quick-revision over formula of AP if finds confusing over derivation.

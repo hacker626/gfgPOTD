@@ -1,0 +1,26 @@
+#User function Template for python3
+
+#TC: O(1),SC:O(1)
+#Link: https://practice.geeksforgeeks.org/problems/break-a-number5913/1
+# Contributed By: Mridul Bhaskar
+# GFG_POTD: 17_DEC_2022 Break a Number
+#Comment_link: https://discuss.geeksforgeeks.org/comment/ad28461cbe4deaf53f693694d7a3a571
+class Solution:
+    def waysToBreakNumber(self, n):
+        temp = n*(n+3)//2+1
+        return temp%(10**9+7)
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        
+        ob = Solution()
+        print(ob.waysToBreakNumber(n))
+        
+# } Driver Code Ends
