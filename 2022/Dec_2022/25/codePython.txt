@@ -1,0 +1,76 @@
+#User function Template for python3
+
+#Link: https://practice.geeksforgeeks.org/problems/missing-number-in-matrix5316/1
+# 25_Dec_2022 Missing number in Matrix[Easy]
+# Comment: https://discuss.geeksforgeeks.org/comment/7f841e2be70d0c9dac5eb96686bb6d2b
+# Contributed By: Mridul Bhaskar
+# TC: O(n^2); SC: O(1)
+
+
+class Solution:
+	def MissingNo(self, matrix):
+		# Code here
+		row,col = 0,0
+
+		
+		for i in range(len(matrix)):
+		    for j in range(len(matrix[0])):
+		        if(matrix[i][j] == 0):
+		            row = i
+		            col = j
+		            
+		            
+        for i in range(len(matrix)):
+            if(i!=row):
+                sumCount = sum(matrix[i])
+                break
+        sumReq = sumCount-sum(matrix[row])
+        
+        matrix[row][col] = sumReq
+        
+        if (self.isInValid(matrix,sumCount)):
+            return -1
+        return sumReq if(sumReq > 0) else -1
+        
+    def isInValid(self,matrix,sumCount):
+        rLen = len(matrix)
+
+        sumRowCol,sumColRow = 0,0
+        
+        for i in range(len(matrix)):
+            sumRowCol+=matrix[i][i]
+            sumColRow+=matrix[rLen-i-1][i]
+            
+            if(sumCount !=sum(matrix[i])):
+                return 1
+                
+        if(sumRowCol != sumCount or sumColRow != sumCount):
+            return 1
+            
+            
+        for i in range(len(matrix[0])):
+            tempSum = 0
+            for j in range(len(matrix)):
+                tempSum+=matrix[j][i]
+            if(tempSum!=sumCount):
+                return 1
+        
+            
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+	T=int(input())
+	for i in range(T):
+		n = int(input())
+		matrix = []
+		for _ in range(n):
+			matrix.append(list(map(int,input().split())))
+		ob = Solution()
+		ans = ob.MissingNo(matrix)
+		print(ans)
+
+# } Driver Code Ends

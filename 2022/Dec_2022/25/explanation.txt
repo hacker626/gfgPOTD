@@ -1,0 +1,26 @@
+
+#Link: https://practice.geeksforgeeks.org/problems/missing-number-in-matrix5316/1
+# 25_Dec_2022 Missing number in Matrix[Easy]
+# Comment: https://discuss.geeksforgeeks.org/comment/7f841e2be70d0c9dac5eb96686bb6d2b
+# Contributed By: Mridul Bhaskar
+# TC: O(n^2); SC: O(1)
+
+
+
+
+
+How to Approach: 
+
+TC: O(n^2)
+
+SC: O(1)
+
+Here we have to find whether it is possible to replace the single 0 in the given matrix with a positive integer such that sum of series from either row,col,diagonal(left to right and right to left) must be equal.If this is not possible return -1
+If the condition goes satisfied return that possible number.
+Now question arises, how to approach clearly it is given sum along all the possible region is same.
+So, first find the index for 0 in the matrix.
+Then, find the sum SumCount of one of the row or column[that special zero should not be included in this]
+Then iterate through the column/row contain that special zero to get sum,Sumreq = SumCount-(sum of this series).
+Now update the special zero with Sumreq.
+Finally check whether the new updated matrix is valid.
+If valid return sumReq(if sumReq>0) else -1.
