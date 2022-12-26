@@ -1,0 +1,22 @@
+#Question: https://practice.geeksforgeeks.org/problems/container-with-most-water0535/1
+# Comment: https://discuss.geeksforgeeks.org/comment/cba355353bbd65b133b23a85e09954d1
+# TC: O(N); SC: O(1)
+# 27_Dec_2022 container With Most Water
+# Contributed By: Mridul Bhaskar
+
+
+
+How to Approach: 
+
+TC: O(N); SC: O(1)  [ Question is "Easy" if you got the logic]
+
+Here we have to find the maxArea acquired by the vertical lines.
+Let me first explain the question, here we are given a array of number which represents the points on the 2D graph P(i,A[i]).
+Then, for the vertical lines oriented lying perpendicularly to x-axis for every point on the 2D graph[according to array A]
+Now to find the area for the water, between those vertical lines.Then its base will be difference between the x-coordinate and height will acquired by minimum length of vertical lines as water will be overflow after that.
+Now, it is enough to understand the problem.Let us start coding; here to find the maximum area we have choose the maximum base,so lets start selecting two end points low  and hi as default value 0 and len(A)-1. Find the corresponding the minimum height of each vertical lines and then calculate the currArea.
+Altogether initialize a variable maxArea to store the maximum area for each case in while loop comparing with currArea.
+The most important thing in the solution part is how to implement the increment/decrement part.
+So, for this let us ponder that vertical lines which is of small length which is limiting maxArea is already considered to calculate currArea.If we decrease base width then maxArea can be increase only by increasing the length of vertical lines.
+Therefore, increase index from side whose vertical lines of smaller length.
+Note: To maximize the area, either increase length or breadth.If we already shortening the base,then we have to check whether the length can be increased. 
