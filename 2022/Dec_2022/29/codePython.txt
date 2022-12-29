@@ -1,0 +1,64 @@
+#User function Template for python3
+# Link:https://practice.geeksforgeeks.org/problems/asteroid-collision/1
+# Comments:https://discuss.geeksforgeeks.org/comment/5a85f8234095a3097720e1be44aa6539
+# 29_Dec_2022 Asteroid Collision
+# TC: O(N); SC: O(N)
+# Contributed By: Mridul Bhaskar
+class Solution:
+    def asteroidCollision(self, N, asteroids):
+        # Code here
+        for i in range(1,N):
+            low,high = i-1,i+1
+            while(low>=0 and asteroids[i] != float('inf') and asteroids[i]<0):
+                
+                if(asteroids[low] == float('inf')):
+                    pass
+                elif(asteroids[low]>0):
+                    if(abs(asteroids[i])>abs(asteroids[low])):
+                        asteroids[low] = float('inf')
+                    elif(abs(asteroids[i])<abs(asteroids[low])):
+                        asteroids[i] = float('inf')
+                    else:
+                        asteroids[low] = float('inf')
+                        asteroids[i] = float('inf')
+                else:
+                    break
+              
+                low-=1
+
+            while(high<N and asteroids[i] != float('inf') and asteroids[i]>0):
+                if(asteroids[high] == float('inf')):
+                    pass
+                elif(asteroids[high]<0):
+                    if((asteroids[i])>abs(asteroids[high])):
+                        
+                        asteroids[high] = float('inf')
+                    elif((asteroids[i])<abs(asteroids[high])):
+                        asteroids[i] = float('inf')
+                    elif((asteroids[i]) == abs(asteroids[high])):
+                        asteroids[high] = float('inf')
+                        asteroids[i] = float('inf')
+                else:
+                    break
+
+                high+=1
+                
+        return [i for i in asteroids if(i!=float('inf'))]
+        
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__': 
+    t = int(input())
+    for _ in range(t):
+        N = int(input())
+        asteroids = list(map(int, input().split()))
+        ob = Solution()
+        res = ob.asteroidCollision(N, asteroids)
+        for val in res:
+            print(val, end = ' ')
+        print()
+# } Driver Code Ends

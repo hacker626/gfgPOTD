@@ -1,0 +1,18 @@
+# Link:https://practice.geeksforgeeks.org/problems/asteroid-collision/1
+# Comments:https://discuss.geeksforgeeks.org/comment/5a85f8234095a3097720e1be44aa6539
+# 29_Dec_2022 Asteroid Collision
+# TC: O(N); SC: O(N)
+# Contributed By: Mridul Bhaskar
+
+
+How to Approach: 
+
+TC(avg) : O(N); SC:O(N)[you can even optimize to O(1) if implement popping out inf element directly]
+
+Here let us first recapitulate question and lthen let us implement mine one of the favourite logic  through this question.
+Here according to question, we are given an array such that each index contains asteroids of certain value which move right[if positive value] else go for left.
+Now there is one more thing that during travelling when two asteroids collide,then lighter one explodes away.If both are having same magnitude both one faces explosion.
+Now, lets began implementation and logical part,let us first start with index 0 and check using while loop iterating leftwards such that if asteroids having lower magnitude or same magnitude comparing to asteroids[i] will turns out to float('inf')[means explodes away].Move towards left only if asteroids[i]<0.
+Moving Left at given index i will ends through while loop only when (either low<0 or both asteroids[i] and asteroids[low] are unidirectional).
+Similarly at same index i move towards right using while looping keeping the criteria of collision in mind such move towards right only when asteroids[i]>0.
+Note: Keep in mind that loop will terminates through break statement if there is not furthur collision and asteroids are moving unidirectional.
