@@ -1,7 +1,7 @@
 #Question: https://practice.geeksforgeeks.org/problems/container-with-most-water0535/1
 # Comment: https://discuss.geeksforgeeks.org/comment/cba355353bbd65b133b23a85e09954d1
 # TC: O(N); SC: O(1)
-# 27_Dec_2022 container With Most Water
+# 27_Dec_2022 Container With Most Water
 # Contributed By: Mridul Bhaskar
 
 
