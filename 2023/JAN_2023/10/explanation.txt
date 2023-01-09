@@ -1,0 +1,17 @@
+# Link: https://practice.geeksforgeeks.org/problems/d7e0ce338b11f0be36877d9c35cc8dfad6636957/1
+# Comments: https://discuss.geeksforgeeks.org/comment/3100ae137f8795319bfa11748debe8d9
+# 10_Jan_2023  Transform to Sum Tree
+# TC: O(N); SC: O(1)
+# Contributed By: Mridul Bhaskar
+
+
+
+How to Approach: 
+
+TC: O(N); SC: O(1)
+
+Here we have to find the sum of values of data of all child nodes to replace the original node data.
+You can easily replace by calculating the leftNode sum and rightNode sum.
+But me want to try somewhat different,just using postOrder traversal.Iterate towards left storing the data temp single length array.
+And,when the traversal switches to postOrder one,passed temp to [0] to drain out the previous sum.
+Finally update root.data equals total leftSum+rightSum-root.data
