@@ -1,0 +1,55 @@
+# Link: https://practice.geeksforgeeks.org/problems/86e609332c9ef4f6b8aa79db11a6c0808c4a1bca/1
+# Comments: https://discuss.geeksforgeeks.org/comment/13864f11267394bb85f21e43aff36b7a
+# 12_Jan_2023  Minimize the Sum
+# TC: O(NlogN)[avg]; SC: O(N)
+# Contributed By: Mridul Bhaskar
+
+
+
+
+#User function Template for python3
+
+import bisect
+class Solution:
+    def minimizeSum(self, N, arr):
+        # Code here
+        minSum = 0
+        arr.sort()
+        for i in range(len(arr)):
+            temp = 0
+            if(len(arr)>=2):
+                temp += arr.pop(0)
+                temp+=arr.pop(0)
+                minSum+=temp
+                bisect.insort(arr,temp)
+            else:
+                return minSum
+#Brute Force Approach
+        # for i in range(len(arr)):
+        #     if(len(arr)>=2):
+        #           arr.sort()
+        #           temp = arr[0]+arr[1]
+        #           minSum += temp
+        #           arr.pop(0)
+        #           arr[0] = temp
+                  
+                  
+        #     else:
+        #         return minSum
+        
+        
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    t = int(input())
+    
+    for _ in range(t):
+        n = int(input())
+        A = [int(x) for x in input().split()]
+        ob=Solution()
+        print(ob.minimizeSum(n, A))
+# } Driver Code Ends
