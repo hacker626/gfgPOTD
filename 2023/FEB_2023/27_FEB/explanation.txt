@@ -1,0 +1,16 @@
+# Link: https://practice.geeksforgeeks.org/problems/bae68b4d6a2a77fb6bd459cf7447240919ebfbf5/1
+# Comments: https://discuss.geeksforgeeks.org/comment/4253d91b00cbde803ebb97d5dbdbb545
+# Date: 27_FEB_2023
+# Title: Reverse both parts
+# TC: O(N); SC: O(1)
+# Contributed By: Mridul Bhaskar
+
+
+How to Approach: 
+
+The best part of this question is that how one can play with the linkedlist.
+As we are already familiar with the question for the LinkedList reversal with using extra space by iterating over the linkedlist and reversing the direction of linked attachement and finally returning the tail as the head of the given linkedList.
+Similarly in this question bifurcate the logic into two halves reversing the first half,storing the head and tail in separate variable.
+Similarly linked the respective head and tail with next part of linkedList reversal.
+Return the respective head.
+Note: Here, I have created seperated Node with value -1 to track initial head to link up two respective sub-linkedList.
